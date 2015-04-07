@@ -62,5 +62,26 @@ $ git checkout gh-pages
 
   
   </body>
-</html>
+</html
+
+<?php
+$a = array(0 => 0,1 => 1,2 => 2,3 => 3,4 => 4, 5 => 5, 6 => 6,7 => 7,8 => 8,9 => 9,10 => 10,11 => 11,12 =>12);
+$chunks = array();
+$i=0;
+while(count($a)){
+	
+	$mod = $i%2;
+	if($mod == 1) {
+		$mod = 3;	
+	}
+    $chunks[] = array_splice($a, 0,(1+($mod)),array());
+
+    $i++;
+}
+
+echo "<pre>";
+
+$chk = array_chunk($chunks,2,false);
+print_r($chk);
+?>
 
